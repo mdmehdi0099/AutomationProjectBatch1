@@ -1,8 +1,11 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.util.List;
 
 public class test1 {
     public static void main(String[] args) throws InterruptedException {
@@ -84,7 +87,7 @@ public class test1 {
 
          */
 
-
+        /*
         //Dynamic xpath
         WebDriver driver=new ChromeDriver();
         driver.get("https://www.linkedin.com/home");
@@ -92,7 +95,8 @@ public class test1 {
 
 
         String text1="Join now";
-        String xpath1="(//a[contains(text(),'%s')])[2]";
+        //String xpath1="(//a[contains(text(),'%s')])[2]";
+        String xpath1="//a[contains(text(),'%s')]";
         String xpath=String.format(xpath1,text1);
         System.out.println("Xpath value is : "+xpath);
         //mouse click=.click();
@@ -115,6 +119,51 @@ public class test1 {
         Thread.sleep(3000);
 
         driver.quit();
+
+         */
+
+
+
+        //List
+        WebDriver driver=new ChromeDriver();
+        driver.get("https://www.linkedin.com/home");
+        driver.manage().window().maximize();
+
+
+        String text1="Join now";
+        //String xpath1="(//a[contains(text(),'%s')])[2]";
+        String xpath1="//a[contains(text(),'%s')]";
+        String xpath=String.format(xpath1,text1);
+        System.out.println("Xpath value is : "+xpath);
+        //mouse click=.click();
+        //text type=.sendkeys("abc");
+
+
+        List<WebElement> list=driver.findElements(By.xpath(xpath));
+        list.size();
+
+        //to fetch the text of the webelement
+
+
+        driver.findElement(By.xpath(xpath)).click();
+        Thread.sleep(4000);
+        String url=driver.getCurrentUrl();
+        String title=driver.getTitle();
+        System.out.println("Title is :"+title);
+        if (title.contains("Sign Up | LinkedIn")){
+            Thread.sleep(4000);
+            driver.findElement(By.xpath("//input[@id='email-or-phone']")).sendKeys("abc@gmail.com");
+            System.out.println("email or phone is entered");
+        }else{
+            Thread.sleep(1000);
+            System.out.println("The browser is not redirected to the login page");
+        }
+
+        Thread.sleep(3000);
+        driver.quit();
+
+
+
 
 
 
