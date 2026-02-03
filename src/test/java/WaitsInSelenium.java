@@ -10,8 +10,8 @@ public class WaitsInSelenium {
     private static volatile boolean bool1=true;
 
     public static void main(String[] args) throws InterruptedException {
-        boolean bool1;
-        Boolean bool2;
+        boolean bool2;
+        Boolean bool3;
 
 
         //wait
