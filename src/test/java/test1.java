@@ -123,7 +123,7 @@ public class test1 {
          */
 
 
-
+        /*
         //List
         WebDriver driver=new ChromeDriver();
         driver.get("https://www.linkedin.com/home");
@@ -143,8 +143,6 @@ public class test1 {
         list.size();
 
         //to fetch the text of the webelement
-
-
         driver.findElement(By.xpath(xpath)).click();
         Thread.sleep(4000);
         String url=driver.getCurrentUrl();
@@ -161,6 +159,13 @@ public class test1 {
 
         Thread.sleep(3000);
         driver.quit();
+
+         */
+
+
+
+
+
 
 
 
