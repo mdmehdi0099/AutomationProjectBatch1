@@ -1,9 +1,7 @@
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.*;
 
-import java.time.Duration;
+import java.util.Set;
 
 public class DropdownSelection {
     public static void main(String[] args) throws InterruptedException {
@@ -50,6 +48,49 @@ public class DropdownSelection {
         }else{
             System.out.println("Failure alert message");
         }
+
+        //Handling frames in selenium
+        driver.switchTo().frame(1);
+        driver.switchTo().frame("google_esf");
+        WebElement element1=driver.findElement(By.xpath(""));
+        driver.switchTo().frame(element1);
+
+        //returning back from frames
+        driver.switchTo().parentFrame();
+        driver.switchTo().defaultContent();
+
+        //Handling windows in selenium
+        String windowCurrent=driver.getWindowHandle();//current window
+        System.out.println("Current window :"+windowCurrent);
+
+        //get the list of windows
+        Set<String> windowsList=driver.getWindowHandles();
+
+        String parentWindow=driver.getWindowHandle();
+        for(String window:windowsList){
+            System.out.println("Window :"+window);
+        }
+        driver.switchTo().window("asdffsdf");
+
+
+        //returning back to the main window
+        driver.switchTo().window(parentWindow);
+
+
+
+        //javascript executor
+        //scroll
+        WebElement scrollupto=driver.findElement(By.xpath("//h3[contains(text(),'Business Solutions')]"));
+        JavascriptExecutor js=(JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);",scrollupto);
+
+
+        //to fetch the content/item stored in the local storage
+        JavascriptExecutor js1=(JavascriptExecutor) driver;
+        String token= (String) js1.executeScript("return window.localStorage.getItem('token');");
+        System.out.println("The value of token stored in the local storage is : "+token);
+
+
 
 
 
