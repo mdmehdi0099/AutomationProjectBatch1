@@ -43,6 +43,4 @@ public class ScreenshotCapture {
         return destinationFolder.toAbsolutePath().toString();
     }
 
-
-
 }
