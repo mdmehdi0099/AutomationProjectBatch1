@@ -75,6 +75,10 @@ public class GlobalConfig {
         System.out.println("----------------------------------------------------------------");
         String baseUrl1=GlobalConfig.get("BaseUrl1");
         System.out.println("The value of baseurl1 is :"+baseUrl1);
+        System.out.println("----------------------------------------------------------------");
+        String baseUrl3=GlobalConfig.get("BaseUrl3","default value");
+        System.out.println("The value of baseurl3 is :"+baseUrl3);
+
 
 
     }
