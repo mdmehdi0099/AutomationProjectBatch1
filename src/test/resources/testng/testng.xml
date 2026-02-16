@@ -1,0 +1,8 @@
+<suite name="TestSuite">
+    <test name="TestName">
+        <classes>
+            <class name="testCases.TestngClass"></class>
+        </classes>
+    </test>
+
+</suite>

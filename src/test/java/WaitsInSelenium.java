@@ -21,6 +21,7 @@ public class WaitsInSelenium {
         //poll=Keep checking the DOM repeatedly at fixed intervals until the element appears or timeout happens.
         // every 500 miliseconds is the polling time
         WebDriver driver = new ChromeDriver();
+
         driver.get("https://www.linkedin.com/home");
         driver.manage().window().maximize();
 
