@@ -1,0 +1,21 @@
+import org.openqa.selenium.By;
+
+public class FetchExcelURL {
+    driver.findElement(By.URL);
+Thread.sleep(4000);
+    String url = driver.getCurrentUrl;
+System.out.println("email or phone number is entered");
+} else{
+        Thread.
+
+sleep(2000);
+    System.out.
+
+println("The browser will notredirect to login page");
+    }
+            }
+            
+    
+    
+        }
+        
