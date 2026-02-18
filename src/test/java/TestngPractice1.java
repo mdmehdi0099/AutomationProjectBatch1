@@ -27,7 +27,7 @@ public class TestngPractice1 {
 
     @Test
     public void test1(){
-        System.out.println("Test");
+        System.out.println("Testing.....");
     }
 
 

@@ -2,6 +2,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import utility.GlobalConfig;
+import utility.ReadExcelFile;
 
 import java.io.IOException;
 
@@ -10,7 +12,7 @@ public class LinkedInLogin {
         //chrome driver initialization
         WebDriver driver=new ChromeDriver();
         //go to the linkedIn Url
-        String url=GlobalConfig.get("linkedInURL");
+        String url= GlobalConfig.get("linkedInURL");
         driver.get(url);
         driver.manage().window().maximize();
 

@@ -1,3 +1,5 @@
+package utility;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -68,7 +70,7 @@ public class GlobalConfig {
             }
         }
     }
-
+/*
     public static void main(String[] args) {
         String baseUrl=GlobalConfig.get("BaseUrl");
         System.out.println("The value of baseurl is :"+baseUrl);
@@ -82,6 +84,8 @@ public class GlobalConfig {
 
 
     }
+
+ */
 
 
 }

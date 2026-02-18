@@ -1,3 +1,5 @@
+package utility;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -12,7 +14,7 @@ public class ReadExcelFile {
     //username  password
     //b         c
     //d         e
-        public static String readDataFromExcel(int row,int column) throws IOException {
+        public String readDataFromExcel(int row,int column) throws IOException {
             //resource file path
             String resourcePath="src/test/resources/input/Credential.xlsx";
             //sheet name
@@ -43,16 +45,18 @@ public class ReadExcelFile {
             return null;
         }
 
-
+/*
         public static void main(String[] args) throws IOException {
-           /* ReadExcelFile readExcelFile=new ReadExcelFile();
+           /* utility.ReadExcelFile readExcelFile=new utility.ReadExcelFile();
             String value1=readExcelFile.readDataFromExcel(1,0);
             System.out.println("The value of cell at given row and column is :"+value1);
 
-            */
+
 
             String value1=readDataFromExcel(1,0);
             System.out.println("The value of cell at given row and column is :"+value1);
         }
+        */
+
 
 }
