@@ -51,12 +51,12 @@ public class LoginPage {
         driver.quit();
     }
 
-    @Test(dataProvider = "loginData",dataProviderClass = TestData.class,priority = 0)
-    public void linkedInLogin2(String username,String password) throws InterruptedException {
+    @Test(dataProvider = "loginData2",dataProviderClass = TestData.class,priority = 0)
+    public void linkedInLogin2(String username) throws InterruptedException {
         System.out.println("-------------------");
         System.out.println("linkedIn login page");
         System.out.println("username is :"+username);
-        System.out.println("password is :"+password);
+        //System.out.println("password is :"+password);
         System.out.println("priority 0");
         Assert.assertEquals(false,true);
         System.out.println("-------------------");
