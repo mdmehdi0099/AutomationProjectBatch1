@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utility.GlobalConfig;
-import utility.ReadExcelFile;
+import utility.RetryAnalyzer;
 import utility.TestData;
 
 public class LoginPage {
@@ -51,7 +51,7 @@ public class LoginPage {
         driver.quit();
     }
 
-    @Test(dataProvider = "loginData2",dataProviderClass = TestData.class,priority = 0)
+    @Test(dataProvider = "loginData2",dataProviderClass = TestData.class,priority = 0,retryAnalyzer = RetryAnalyzer.class)
     public void linkedInLogin2(String username) throws InterruptedException {
         System.out.println("-------------------");
         System.out.println("linkedIn login page");
@@ -61,18 +61,18 @@ public class LoginPage {
         Assert.assertEquals(false,true);
         System.out.println("-------------------");
 
-
     }
 
-    @Test(dataProvider = "loginData",dataProviderClass = TestData.class,priority = 1)
+    @Test(dataProvider = "loginData",dataProviderClass = TestData.class,priority = 1,retryAnalyzer = RetryAnalyzer.class)
     public void linkedInLogin3(String username,String password) throws InterruptedException {
         System.out.println("-------------------");
         System.out.println("linkedIn login page");
         System.out.println("username is :"+username);
         System.out.println("password is :"+password);
         System.out.println("priority 1");
-        System.out.println("-------------------");
+        System.out.println("--------*************************-----------");
 
+        Assert.assertEquals(false,true);
 
     }
 
