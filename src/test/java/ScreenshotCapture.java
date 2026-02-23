@@ -14,6 +14,7 @@ import java.util.Date;
 
 public class ScreenshotCapture {
 
+    /*
     public static void main(String[] args) throws InterruptedException, IOException {
         WebDriver driver=new ChromeDriver();
         driver.get("https://www.linkedin.com/home");
@@ -23,6 +24,8 @@ public class ScreenshotCapture {
         driver.quit();
 
     }
+
+     */
 
     public static String takeSnapshot(WebDriver driver,String filename) throws IOException {
         //create a folder where screenshot is stored if not found

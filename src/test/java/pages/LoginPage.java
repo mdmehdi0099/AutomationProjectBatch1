@@ -1,16 +1,31 @@
 package pages;
 
+import hooks.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utility.GlobalConfig;
 import utility.RetryAnalyzer;
 import utility.TestData;
 
-public class LoginPage {
+public class LoginPage extends BaseClass {
+
+    @BeforeMethod
+    public void setup(){
+        //chrome driver initialization
+        driver=new ChromeDriver();
+        //go to the linkedIn Url
+        String url= GlobalConfig.get("linkedInURL");
+        driver.get(url);
+        driver.manage().window().maximize();
+        System.out.println("setup............");
+
+    }
 
     @Test(dataProvider = "loginData",dataProviderClass = TestData.class,priority = 5)
     public void linkedInLogin(String username,String password) throws InterruptedException {
@@ -19,12 +34,9 @@ public class LoginPage {
         System.out.println("username is :"+username);
         System.out.println("password is :"+password);
 
-        //chrome driver initialization
-        WebDriver driver=new ChromeDriver();
-        //go to the linkedIn Url
-        String url= GlobalConfig.get("linkedInURL");
-        driver.get(url);
-        driver.manage().window().maximize();
+
+
+
 
         Thread.sleep(2000);
         //click on signIn button
@@ -48,7 +60,8 @@ public class LoginPage {
         loginBtn.click();
 
         Thread.sleep(5000);
-        driver.quit();
+
+
     }
 
     @Test(dataProvider = "loginData2",dataProviderClass = TestData.class,priority = 0,retryAnalyzer = RetryAnalyzer.class)
@@ -76,7 +89,11 @@ public class LoginPage {
 
     }
 
-
+    @AfterMethod
+    public void tearDown(){
+        System.out.println("driver.quit();");
+        driver.quit();
+    }
 
 
 
