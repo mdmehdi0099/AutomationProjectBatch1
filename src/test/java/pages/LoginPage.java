@@ -2,17 +2,19 @@ package pages;
 
 import hooks.BaseClass;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import utility.GlobalConfig;
 import utility.RetryAnalyzer;
 import utility.TestData;
+import utility.TestListener;
 
+@Listeners(TestListener.class)
 public class LoginPage extends BaseClass {
 
     @BeforeMethod
@@ -24,7 +26,6 @@ public class LoginPage extends BaseClass {
         driver.get(url);
         driver.manage().window().maximize();
         System.out.println("setup............");
-
     }
 
     @Test(dataProvider = "loginData",dataProviderClass = TestData.class,priority = 5)
@@ -33,10 +34,6 @@ public class LoginPage extends BaseClass {
         System.out.println("linkedIn login page");
         System.out.println("username is :"+username);
         System.out.println("password is :"+password);
-
-
-
-
 
         Thread.sleep(2000);
         //click on signIn button
