@@ -13,11 +13,13 @@ public class TestngClass {
     public void afterClass(){
         System.out.println("AfterClass");
     }
+    
     //method
     @BeforeMethod
     public void beforeMethod(){
         System.out.println("BeforeMethod");
     }
+
     @AfterMethod
     public void afterMethod(){
         System.out.println("AfterMethod");
