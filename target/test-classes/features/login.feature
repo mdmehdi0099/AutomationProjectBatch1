@@ -11,7 +11,7 @@ Scenario Outline: To login to the application with valid Credentials and verify 
 
   Examples:
   | URL        |  Username  | Password   |  HomeURL   |
-  | abc.com    | abc        | abc        |  home.url  |
+  | https://www.linkedin.com/home   | abc        | abc        |  https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin  |
 
 
 
