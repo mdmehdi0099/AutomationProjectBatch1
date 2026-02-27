@@ -10,7 +10,7 @@ Scenario Outline: To login to the application with valid Credentials and verify 
   Then The user should be redirected to the Home Page "<HomeURL>"
 
   Examples:
-  | URL        |  Username  | Password   |  HomeURL   |
+  | URL                             |  Username  | Password   |  HomeURL                                                                    |
   | https://www.linkedin.com/home   | abc        | abc        |  https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin  |
 
 
