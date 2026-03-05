@@ -13,9 +13,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pageFactory.LoginPageFactory;
 import utility.GlobalConfig;
 
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
 
 public class LoginStepDefinition {
-
+    //private static Logger logger= LogManager.getLogManager().getLogger(String.valueOf(LoginStepDefinition.class));
     //chrome driver initialization
     WebDriver driver;
     LoginPageFactory loginPageFactory;
@@ -59,6 +62,38 @@ public class LoginStepDefinition {
         System.out.println("The user is on the homepage");
 
     }
+
+
+    @Given("The user is on the amazon site {string}")
+    public void the_user_is_on_the_amazon_site(String string) {
+        //System.out.println("The user is on the amazon site {string}");
+        //logger.info("The user is on the amazon site {string}");
+    }
+    @Given("The user will enter the username {string} and password {string} on the amazon login page")
+    public void the_user_will_enter_the_username_and_password_on_the_amazon_login_page(String string, String string2) {
+        System.out.println("The user will enter the username {string} and password {string} on the amazon login page");
+        //logger.info("The user will enter the username {string} and password {string} on the amazon login page");
+    }
+    @Given("The user click on the login button")
+    public void the_user_click_on_the_login_button() {
+        System.out.println("The user click on the login button");
+        //logger.info("The user click on the login button");
+
+    }
+    @Given("The user will search the item {string} on the amazon")
+    public void the_user_will_search_the_item_on_the_amazon(String string) {
+        System.out.println("The user will search the item {string} on the amazon");
+    }
+    @When("The user will add the product on cart")
+    public void the_user_will_add_the_product_on_cart() {
+        System.out.println("The user will add the product on cart");
+
+    }
+    @Then("The product should be visible on the cart")
+    public void the_product_should_be_visible_on_the_cart() {
+        System.out.println("The product should be visible on the cart");
+    }
+
 
 
 
