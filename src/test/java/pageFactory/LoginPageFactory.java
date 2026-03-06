@@ -55,5 +55,30 @@ public class LoginPageFactory{
         loginBtn.click();
     }
 
+    //amazon step
+    @FindBy(xpath = "//span[contains(text(),'Account & Lists')]")
+    WebElement amzSignIn;
+
+    public void clickOnSignIn(){
+        wait.until(ExpectedConditions.elementToBeClickable(amzSignIn));
+        amzSignIn.click();
+    }
+
+    @FindBy(xpath = "//input[@id='ap_email_login']")
+    WebElement signInInputBtn;
+
+    public void enterUserId(String username){
+        wait.until(ExpectedConditions.elementToBeClickable(signInInputBtn));
+        signInInputBtn.sendKeys(username);
+    }
+    @FindBy(xpath = "//input[@class='a-button-input']")
+    WebElement continueBtn;
+
+    public void clickOnContinueBtn(){
+        wait.until(ExpectedConditions.elementToBeClickable(continueBtn));
+        continueBtn.click();
+
+    }
+
 
 }

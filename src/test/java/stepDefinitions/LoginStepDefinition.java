@@ -63,15 +63,26 @@ public class LoginStepDefinition {
 
     }
 
-
+    //from here we will have the amazon site
     @Given("The user is on the amazon site {string}")
-    public void the_user_is_on_the_amazon_site(String string) {
+    public void the_user_is_on_the_amazon_site(String url) {
         //System.out.println("The user is on the amazon site {string}");
+
+        driver.get(url);
+        driver.manage().window().maximize();
         logger.info("The user is on the amazon site");
+
+
     }
     @Given("The user will enter the username {string} and password {string} on the amazon login page")
-    public void the_user_will_enter_the_username_and_password_on_the_amazon_login_page(String string, String string2) {
+    public void the_user_will_enter_the_username_and_password_on_the_amazon_login_page(String Username, String Password) throws InterruptedException {
         //System.out.println("The user will enter the username {string} and password {string} on the amazon login page");
+        loginPageFactory.clickOnSignIn();
+        Thread.sleep(5000);
+        loginPageFactory.enterUserId(Username);
+        Thread.sleep(5000);
+        loginPageFactory.clickOnContinueBtn();
+        Thread.sleep(5000);
         logger.info("The user will enter the username  and password  on the amazon login page");
     }
     @Given("The user click on the login button")
